@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf1">
+    <meta name="description" content="A little birthday love letter, made just for you.">
+    <title>A little love letter for you</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/images.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="top-ribbon">
+      <span class="sparkle" aria-hidden="true">✦</span>
+      <span>Today, we celebrate someone wonderful</span>
+      <span class="sparkle" aria-hidden="true">✦</span>
+    </header>
+
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark">B</span> birthday notes</a>
+      <a class="pill-link" href="#letter">Your letter</a>
+    </nav>
+
+    <main>
+      <section class="hero container" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">A little love letter for you</p>
+          <h1>A beautiful<br>day <span>for a beautiful soul</span></h1>
+          <p class="hero-intro">A pocketful of memories, warm wishes, and all the love you bring into the lives around you.</p>
+        </div>
+
+        <div class="polaroids" aria-label="Birthday memories">
+          <figure class="polaroid polaroid-left">
+            <img data-image="adventure" alt="">
+            <figcaption>our kind of day</figcaption>
+          </figure>
+          <figure class="polaroid polaroid-center">
+            <img data-image="portrait" alt="">
+            <figcaption>that smile</figcaption>
+          </figure>
+          <figure class="polaroid polaroid-right">
+            <img data-image="cake" alt="">
+            <figcaption>make a wish</figcaption>
+          </figure>
+        </div>
+        <span class="flower flower-one" aria-hidden="true">✿</span>
+        <span class="flower flower-two" aria-hidden="true">✿</span>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>more adventures</span><b>✦</b><span>more cake</span><b>✦</b><span>more little joys</span><b>✦</b>
+          <span>more adventures</span><b>✦</b><span>more cake</span><b>✦</b><span>more little joys</span><b>✦</b>
+        </div>
+      </div>
+
+      <section class="memories container section-pad" id="memories">
+        <div class="section-heading">
+          <p class="eyebrow">The joy archive</p>
+          <h2>Days worth<br><em>remembering</em></h2>
+          <p>The loud laughs, the quiet moments, and every sunlit second in between. Click a memory to make this collection yours.</p>
+        </div>
+        <div class="memory-grid">
+          <figure class="memory-card memory-wide">
+            <img data-image="celebration" alt="">
+            <figcaption>little celebrations</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img data-image="flowers" alt="">
+            <figcaption>flowers<br>for you</figcaption>
+          </figure>
+          <figure class="memory-card">
+            <img data-image="table" alt="">
+            <figcaption>the loveliest<br>days</figcaption>
+          </figure>
+          <button class="memory-card memory-wide wish-card" type="button" data-open-wish>
+            <img data-image="cake" alt="">
+            <span class="image-caption">make a wish <span aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+
+        <blockquote class="quote-card">
+          <span class="quote-star" aria-hidden="true">✦</span>
+          <p>“The best thing about<br>memories is making them.”</p>
+          <span class="quote-rule" aria-hidden="true"></span>
+        </blockquote>
+      </section>
+
+      <section class="letter-wrap" id="letter">
+        <article class="letter-card">
+          <span class="tape" aria-hidden="true"></span>
+          <p class="eyebrow">Read this whenever you need a little sunshine</p>
+          <h2>My dearest Dushyant,</h2>
+          <div class="letter-divider" aria-hidden="true"><span>✦</span></div>
+          <p class="letter-body">May this year bring you slow mornings, unexpected flowers, adventures that make your heart race, and people who remind you how deeply you are loved. You make the world softer, brighter, and infinitely more beautiful just by being in it.</p>
+          <p class="signature">with all my love, always</p>
+          <span class="flower flower-letter" aria-hidden="true">✿</span>
+        </article>
+      </section>
+
+      <section class="wish-section container">
+        <span class="wish-star" aria-hidden="true">✦</span>
+        <p class="eyebrow">Now close your eyes</p>
+        <h2>There's a wish<br>waiting to be<br>made</h2>
+        <button class="primary-button" type="button" data-open-wish>Make your birthday wish</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with sunshine, wildflowers, and so much love</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <dialog class="modal" id="wish-dialog" aria-labelledby="wish-title">
+      <form class="modal-card" id="wish-form">
+        <button class="modal-close" type="button" data-close-dialog aria-label="Close">×</button>
+        <p class="eyebrow">A little wish, just for you</p>
+        <h2 id="wish-title">Make a wish</h2>
+        <p class="modal-intro">Write it down and send it with love. Your wish will be saved privately.</p>
+        <label for="wish-name">Your name <span>(optional)</span></label>
+        <input id="wish-name" name="name" maxlength="80" autocomplete="name" placeholder="A friend">
+        <label for="wish-message">Your birthday wish</label>
+        <textarea id="wish-message" name="wish" maxlength="2000" rows="5" required placeholder="Wishing you a year full of..."></textarea>
+        <p class="form-message" id="wish-message-status" role="status" aria-live="polite"></p>
+        <button class="primary-button modal-submit" type="submit">Send your wish</button>
+      </form>
+    </dialog>
+
+  </body>
+</html>

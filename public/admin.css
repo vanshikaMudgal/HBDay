@@ -1,0 +1,28 @@
+.admin-page { min-height: 100vh; }
+.admin-main { width: min(100% - 40px, 700px); margin: 0 auto; padding: 31px 0 64px; }
+.admin-brand { margin-bottom: 62px; }
+.admin-heading { max-width: 500px; }
+.admin-heading h1 { margin: 0; font: 500 clamp(48px, 10vw, 70px)/.92 var(--serif); letter-spacing: -.06em; }
+.admin-heading h1 em { color: var(--coral); font-weight: 400; }
+.admin-heading > p:last-child { max-width: 390px; margin: 19px 0 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.admin-login { margin: 32px 0 28px; padding: 22px; border: 1px solid var(--line); border-radius: 16px; background: #fffdf8; }
+.admin-login label { display: block; margin-bottom: 9px; font-size: 11px; font-weight: 700; }
+.login-row { display: flex; gap: 10px; }
+.login-row .primary-button { flex: 0 0 auto; }
+.admin-status { min-height: 18px; margin: 10px 0 0; color: var(--coral-dark); font-size: 12px; }
+.wish-list { display: grid; gap: 12px; }
+.wish-entry { padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: #fffdf8; }
+.wish-entry header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.wish-entry h2 { margin: 0; font: 20px var(--serif); }
+.wish-entry time { color: var(--muted); font-size: 10px; }
+.wish-entry p { margin: 12px 0 0; color: #57574f; font: 16px/1.7 var(--serif); white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty-inbox { padding: 25px; border: 1px dashed #d7c7ae; border-radius: 16px; color: var(--muted); font-size: 13px; text-align: center; }
+.admin-back { margin-top: 35px; font-size: 11px; }
+.admin-back a { color: var(--coral-dark); text-decoration: none; }
+@media (max-width: 520px) {
+  .admin-main { width: min(100% - 34px, 700px); padding-top: 24px; }
+  .admin-brand { margin-bottom: 47px; }
+  .admin-login { padding: 17px; }
+  .login-row { align-items: stretch; flex-direction: column; }
+  .wish-entry header { align-items: flex-start; flex-direction: column; gap: 5px; }
+}

@@ -1,0 +1,91 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Birthday Notes",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"start"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Birthday App",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"server.js"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Birthday Server Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"server.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Wish API Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"api/wishes.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Server Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"server.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Admin Script Syntax",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--check",
+				"public/admin.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test Wish API Handler",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const assert=require('node:assert/strict'); const handler=require('./api/wishes.js'); async function call(method,body,headers={}) { let code,payload; const response={setHeader(){},status(value){code=value;return this;},json(value){payload=value;}}; await handler({method,body,headers},response); return {code,payload}; } (async()=>{delete process.env.ADMIN_TOKEN; assert.equal((await call('GET')).code,401); assert.equal((await call('POST',{})).code,400); process.env.ADMIN_TOKEN='secret'; assert.equal((await call('GET',undefined,{authorization:'Bearer wrong'})).code,401); global.fetch=async(url,options)=>new Response(JSON.stringify([{name:'Friend',wish:'Happy birthday!',created_at:'2026-10-14T12:00:00Z'}]),{status:200}); const result=await call('GET',undefined,{authorization:'Bearer secret'}); assert.equal(result.code,200); assert.equal(result.payload.wishes[0].createdAt,'2026-10-14T12:00:00Z'); console.log('Wish API handler checks passed.'); })().catch(error=>{console.error(error);process.exitCode=1;});"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Test Supabase Wishes API",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--test",
+				"test/wishes-api.test.js"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf1">
+    <title>Birthday wishes inbox</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="top-ribbon"><span class="sparkle" aria-hidden="true">✦</span> A little love, collected <span class="sparkle" aria-hidden="true">✦</span></header>
+    <main class="admin-main">
+      <a class="brand admin-brand" href="/"><span class="brand-mark">B</span> birthday notes</a>
+      <section class="admin-heading">
+        <p class="eyebrow">Just for you</p>
+        <h1>The wish<br><em>inbox</em></h1>
+        <p>Birthday wishes are private. Sign in with your admin password to read them.</p>
+      </section>
+      <form class="admin-login" id="admin-login">
+        <label for="admin-token">Admin password</label>
+        <div class="login-row">
+          <input id="admin-token" type="password" autocomplete="current-password" required>
+          <button class="primary-button" type="submit">Open inbox</button>
+        </div>
+        <p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+      </form>
+      <section class="wish-list" id="wish-list" aria-live="polite" aria-label="Submitted birthday wishes"></section>
+      <p class="admin-back"><a href="/">← Back to the birthday page</a></p>
+    </main>
+  </body>
+</html>

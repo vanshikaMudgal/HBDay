@@ -1,0 +1,12 @@
+{
+  "name": "birthday-notes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A birthday letter and wish book with a small private wishes inbox.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
